@@ -9,14 +9,14 @@ const Footer = () => {
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-4 ">
           <div>
             <div class="">
-              <span className="text-4xl font-bold ">Hubx</span>
+              <span className="text-4xl font-bold rajdhani-font">Hubx</span>
             </div>
 
             <p class="max-w-xs mt-4 text-normal">
               Be the first who learns about our great promotions!
             </p>
 
-            <p className="uppercase text-2xl mt-10 font-semibold">Follow us</p>
+            <p className="uppercase text-2xl mt-10 font-semibold rajdhani-font">Follow us</p>
             <ul class="flex gap-6 mt-4">
               {/* Twitter  */}
               <li>
@@ -56,7 +56,7 @@ const Footer = () => {
 
           <div class="grid  gap-8 grid-cols-2 lg:col-span-2 lg:grid-cols-3">
             <div>
-              <p class="font-semibold text-xl  uppercase">Products</p>
+              <p class="font-semibold text-xl  uppercase rajdhani-font">Products</p>
 
               <nav aria-label="Footer Navigation - Services" class="mt-6">
                 <ul class="space-y-4 text-sm">
@@ -88,7 +88,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <p class="font-semibold text-xl  uppercase">Category</p>
+              <p class="font-semibold text-xl  uppercase rajdhani-font">Category</p>
 
               <nav aria-label="Footer Navigation - Company" class="mt-6">
                 <ul class="space-y-4 text-sm">
@@ -124,7 +124,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <p class="font-semibold text-xl  uppercase">Info</p>
+              <p class="font-semibold text-xl  uppercase rajdhani-font">Info</p>
 
               <nav aria-label="Footer Navigation - Company" class="mt-6">
                 <ul class="space-y-4 text-sm">
@@ -168,7 +168,7 @@ const Footer = () => {
           </div>
 
           <div className="">
-              <p class="font-semibold text-xl  uppercase">Subscribe</p>
+              <p class="font-semibold text-xl  uppercase rajdhani-font">Subscribe</p>
 
               <nav aria-label="Footer Navigation - Legal" class="mt-6">
                 <ul class="space-y-4 text-sm">
@@ -190,7 +190,7 @@ const Footer = () => {
                         class="w-full border-none  p-2 bg-transparent sm:text-sm "
                       />
 
-                      <button class="w-full px-3 py-2 mt-1 text-sm font-bold tracking-wide text-white uppercase transition-none bg-[#2554D7]  hover:bg-sky-900 sm:mt-0 sm:w-auto sm:flex-shrink-0">
+                      <button class="w-full px-3 py-2 mt-1 text-sm font-bold tracking-wide text-white uppercase transition-none bg-[#2554D7]  hover:bg-sky-900 sm:mt-0 sm:w-auto sm:flex-shrink-0 rajdhani-font">
                         Sign Up
                       </button>
                     </div>
