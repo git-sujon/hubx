@@ -14,7 +14,7 @@ const Header = () => {
       x-data={` ${{ isOpen: false }}`}
       class="bg-white shadow "
     >
-      <div class="container px-6 py-4 mx-auto">
+      <div class="container px-6 py-4 mx-auto rajdhani-Font">
         <div class="lg:flex lg:items-center">
           <div class="flex items-center justify-between">
             <Link to="/">
