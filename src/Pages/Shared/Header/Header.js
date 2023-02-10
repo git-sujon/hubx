@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiShoppingBag, FiSearch , FiUser} from 'react-icons/fi';
+import TopInfo from "../../../Components/TopInfo/TopInfo";
 
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openSearch, setOpenSearch] = useState(false)
   return (
+   <>
+   <TopInfo></TopInfo>
     <nav
       x-data={` ${{ isOpen: false }}`}
       class="bg-white shadow "
@@ -14,7 +17,7 @@ const Header = () => {
       <div class="container px-6 py-4 mx-auto">
         <div class="lg:flex lg:items-center">
           <div class="flex items-center justify-between">
-            <Link to="#">
+            <Link to="/">
              <span className="font-bold text-4xl">HUBx</span>
             </Link>
 
@@ -131,6 +134,7 @@ const Header = () => {
         </div>
       </div>
     </nav>
+   </>
   );
 };
 
