@@ -80,7 +80,7 @@ const Header = () => {
           >
             <div class="flex flex-col  capitalize  lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center font-medium">
               <Link
-                to="#"
+                to="/"
                 class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
                 Home

@@ -1,6 +1,7 @@
 import React from "react";
 import { FiTwitter, FiFacebook, FiInstagram } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import Button from "../../../Components/Button/Button";
 
 const Footer = () => {
   return (
@@ -190,9 +191,7 @@ const Footer = () => {
                         class="w-full border-none  p-2 bg-transparent sm:text-sm "
                       />
 
-                      <button class="w-full px-3 py-2 mt-1 text-sm font-bold tracking-wide text-white uppercase transition-none bg-[#2554D7]  hover:bg-sky-900 sm:mt-0 sm:w-auto sm:flex-shrink-0 rajdhani-font">
-                        Sign Up
-                      </button>
+                      <Button>Sign Up</Button>
                     </div>
                   </form>
                 </ul>

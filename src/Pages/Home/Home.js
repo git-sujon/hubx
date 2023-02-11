@@ -1,20 +1,11 @@
 import React from 'react';
+import Banner from './Banner/Banner';
 
 const Home = () => {
   return (
-    <div>
-      <p>Home</p>
-      <p>Home</p>
-      <p>Home</p>
-      <p>Home</p>
-      <p>Home</p>
-      <p>Home</p>
-      <p>Home</p>
-      <p>Home</p>
-      <p>Home</p>
-      <p>Home</p>
-      <p>Home</p>
-    </div>
+   <>
+   <Banner></Banner>
+   </>
   );
 };
 
