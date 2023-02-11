@@ -6,7 +6,7 @@ import Button from "../../../Components/Button/Button";
 const Footer = () => {
   return (
     <footer class="bg-[#040F16] text-white">
-      <div class="max-w-screen-xl px-4 py-16  mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-20">
+      <div class="max-w-screen-xl px-4 py-16  mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-[70px]">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-4 ">
           <div>
             <div class="">
