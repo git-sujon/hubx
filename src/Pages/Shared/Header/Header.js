@@ -6,7 +6,7 @@ import TopInfo from "../../../Components/TopInfo/TopInfo";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [openSearch, setOpenSearch] = useState(false)
+
   return (
    <>
    <TopInfo></TopInfo>
@@ -86,7 +86,7 @@ const Header = () => {
                 Home
               </Link>
               <Link
-                to="#"
+                to="/shop"
                 class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
                 Shop
