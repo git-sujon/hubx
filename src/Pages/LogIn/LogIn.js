@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "../../Assets/Fonts/fonts.css";
@@ -10,8 +10,8 @@ import toast  from 'react-hot-toast';
 
 const LogIn = () => {
   const {user,  userLogin,} = useContext(AuthContext)
+  const [error, setError] = useState("");
 
-  console.log("user", user)
 
 
 
@@ -29,10 +29,19 @@ const LogIn = () => {
 
     userLogin( event?.email, event?.password)
     .then (res => {
+      reset()
       toast.success("Welcome Back")
+      setError('')
+      
     })
     .catch(error => {
-      console.error(error.message)
+  
+      if ((error?.message) === 'Firebase: Error (auth/user-not-found).') {
+        setError("No Such User Found");
+      }
+      else{
+        setError('Incorrect Email or Password')
+      }
     })
 
 
@@ -57,6 +66,9 @@ const LogIn = () => {
                 placeholder="your@email.com"
                 aria-label="Email Address"
               />
+                 <p className="text-red-600  text-sm text-semibold mt-1">
+                {errors?.email?.message}
+              </p>
             </div>
 
             <div className="w-full mt-8">
@@ -67,11 +79,22 @@ const LogIn = () => {
                 {...register("password", {
                   required: "THis Field is required",
                 })}
+                required
                 placeholder="***********"
                 aria-label="Password"
               />
-            </div>
+                  { errors?.email?.message ?
+                <p className="text-red-600  text-sm text-semibold mt-3">
+                {errors?.email?.message}
+              </p>
+              :
+              <p className="text-red-600  text-sm text-semibold mt-3">
+                {error}
+              </p>
+              }
 
+            </div>
+           
             <div className="flex items-center gap-x-8 mt-10">
             
 

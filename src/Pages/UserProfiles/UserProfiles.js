@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const UserProfiles = () => {
+
+
+
   return (
     <div className="overflow-x-auto my-20 container  mx-auto max-w-[867px]">
         <div className="flex justify-center mx-auto py-4">

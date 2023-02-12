@@ -61,10 +61,10 @@ const Shop = () => {
 
         <div className="flex justify-end items-center">
         <button className="  ">
-        <FiChevronLeft className="w-5 h-5 text-white ml-5 font-bold cursor-pointer bg-[#040F16]"/>
+        <FiChevronLeft className="w-5 h-5 text-white ml-5 font-bold cursor-pointer bg-[#040F16] hover:bg-sky-900 "/>
         </button>
         <button className=" -ml-3">
-        <FiChevronRight className="w-5 h-5 text-white ml-5 font-bold cursor-pointer bg-[#040F16]"/>
+        <FiChevronRight className="w-5 h-5 text-white ml-5 font-bold cursor-pointer bg-[#040F16] hover:bg-sky-900 "/>
         </button>
         </div>
 

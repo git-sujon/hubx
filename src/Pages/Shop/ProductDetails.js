@@ -11,15 +11,15 @@ const ProductDetails = ({ product }) => {
           <img src={img} alt={title} className=" w-full " />
 
           <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 overly-bg bg-opacity-75 opacity-0 hover:opacity-100  font-black hover:bg-black/40 border-2 border-white bg-white  ">
-            <div className=" bottom-20 right-4 absolute p-3 rounded-full bg-white">
+            <div className=" bottom-20 right-4 absolute p-3 rounded-full bg-white hover:bg-sky-900 ">
               <Link to=" ">
-                <BsBagPlus className="text-black  font-bold  " />
+                <BsBagPlus className="text-black  font-bold  hover:text-white" />
               </Link>
             
             </div>
-            <div className="  bottom-8 right-4 space-y-4 absolute p-3 rounded-full bg-white">
+            <div className="  bottom-8 right-4 space-y-4 absolute p-3 rounded-full bg-white hover:bg-sky-900 ">
             <Link to=" ">
-                <BsEye className="text-black  font-bold  " />
+                <BsEye className="text-black  font-bold  hover:text-white" />
               </Link>
             
             </div>

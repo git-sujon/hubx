@@ -1,37 +1,45 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import CommonLink from "../../Components/Link/CommonLink";
 import NewCustomer from "../../Components/NewCustomer/NewCustomer";
-import toast  from 'react-hot-toast';
+import toast from "react-hot-toast";
 import { AuthContext } from "../../Contexts/AuthProvider";
 
 const ResetPassword = () => {
+  const { resetPassword } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
-  const {resetPassword,} = useContext(AuthContext)
+
+
 
   const {
     register,
     handleSubmit,
-
+    reset,
 
     formState: { errors },
   } = useForm();
 
   const resetPasswordHandler = (event) => {
     resetPassword(event?.email)
-    .then(() => {
-      toast.success('Please Check your email');
-    })
-    .catch((error) => {
+      .then(() => {
+        reset();
+        toast.success("Please Check your email");
+        setError('')
+      })
+      .catch((error) => {
 
-      console.error(error.message)
-  
-    });
+        if ((error?.message) === 'Firebase: Error (auth/invalid-email).' || 'Firebase: Error (auth/user-not-found).') {
+          setError("No Such User Found");
+        }
+        else{
+          setError(error?.message)
+        }
+        
+      });
   };
-
-
 
   return (
     <div className="mt-20 mb-72">
@@ -61,11 +69,23 @@ const ResetPassword = () => {
                 placeholder="your@email.com"
                 aria-label="Email Address"
               />
+
+              { errors?.email?.message ?
+                <p className="text-red-600  text-sm text-semibold mt-3">
+                {errors?.email?.message}
+              </p>
+              :
+              <p className="text-red-600  text-sm text-semibold mt-3">
+                {error}
+              </p>
+              }
+
+
             </div>
 
             <div className="flex items-center gap-x-8 mt-10">
               <Button>Reset</Button>
-              <CommonLink to={'/login'}>Cancel</CommonLink>
+              <CommonLink to={"/login"}>Cancel</CommonLink>
             </div>
           </form>
         </div>

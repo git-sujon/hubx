@@ -2,14 +2,10 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../../Components/Button/Button";
 import { AuthContext } from "../../Contexts/AuthProvider";
-import toast  from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 const SignUp = () => {
-
-  const {user,  createUser,} = useContext(AuthContext)
-
- 
-
+  const { user, createUser } = useContext(AuthContext);
 
   const {
     register,
@@ -21,19 +17,42 @@ const SignUp = () => {
 
   const singUpHandler = (event) => {
 
-
-
-    createUser( event?.email, event?.password)
-    .then (res => {
+    createUser(event?.email, event?.password)
+      .then((res) => {
+        storingUserData(event)
       
-      reset()
-      toast.success("New User Created")
-    })
-    .catch(error => {
-      console.error(error.message)
-    })
-
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
+
+
+  const storingUserData = (event) => {
+    const users = {
+      firstName: event?.firstName,
+      lastName: event?.lastName,
+      email: event?.email,
+      password: event?.password
+    }
+
+    fetch(`http://localhost:5000/users`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(users)
+    })
+    .then((res) => res.json())
+    .then(data => {
+      if(data.acknowledged){
+        reset();
+        toast.success("New User Created"); 
+      }
+    })
+    .catch((err)=> console.log(err))
+
+  }
 
   return (
     <div className="my-20">
@@ -60,6 +79,9 @@ const SignUp = () => {
                 placeholder="Enter your first name"
                 aria-label="First Name"
               />
+              <p className="text-red-600  text-sm text-semibold mt-1">
+                {errors?.firstName?.message}
+              </p>
             </div>
             <div className="w-full mt-8">
               <label
@@ -77,6 +99,9 @@ const SignUp = () => {
                 placeholder="Enter your last name"
                 aria-label="last Name"
               />
+              <p className="text-red-600  text-sm text-semibold mt-1">
+                {errors?.lastName?.message}
+              </p>
             </div>
             <div className="w-full mt-8">
               <label
@@ -92,6 +117,9 @@ const SignUp = () => {
                 placeholder="your@email.com"
                 aria-label="Email Address"
               />
+              <p className="text-red-600  text-sm text-semibold mt-1">
+                {errors?.email?.message}
+              </p>
             </div>
 
             <div className="w-full mt-8">
@@ -110,6 +138,9 @@ const SignUp = () => {
                 placeholder="***********"
                 aria-label="Password"
               />
+              <p className="text-red-600  text-sm text-semibold mt-1">
+                {errors?.password?.message}
+              </p>
             </div>
 
             <div className="flex items-center gap-x-8 mt-10">
