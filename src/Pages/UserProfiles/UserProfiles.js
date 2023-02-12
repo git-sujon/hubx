@@ -2,7 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 const UserProfiles = () => {
 
+  const [users, setUsers] = useState([])
 
+  useEffect(()=>{
+    fetch(`http://localhost:5000/users`, {
+      
+    })
+    .then(res => res.json())
+    .then(data=> setUsers(data))
+  },[])
 
   return (
     <div className="overflow-x-auto my-20 container  mx-auto max-w-[867px]">
