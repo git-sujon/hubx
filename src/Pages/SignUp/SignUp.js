@@ -7,7 +7,7 @@ const SignUp = () => {
 
   const {user,  createUser,} = useContext(AuthContext)
 
-  console.log("user", user)
+ 
 
 
   const {
@@ -19,13 +19,15 @@ const SignUp = () => {
   } = useForm();
 
   const singUpHandler = (event) => {
-    console.log("event", event);
+
 
 
     createUser( event?.email, event?.password)
-    .then (res => res.json())
-    .then(data => {
-      console.log(data)
+    .then (res => {
+      reset()
+    })
+    .catch(error => {
+      console.error(error.message)
     })
 
   };

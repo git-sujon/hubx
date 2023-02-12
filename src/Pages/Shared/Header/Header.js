@@ -90,17 +90,19 @@ const Header = () => {
                 </Link>
 
                 <Link
-                  to="/signUp"
-                  className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
-                >
-                  Register
-                </Link>
-                <Link
                   to="/userProfiles"
                   className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
                 >
                   User Profiles
                 </Link>
+
+                <Link
+                  to="/signUp"
+                  className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
+                >
+                  Register
+                </Link>
+
                 <Link
                   to="/login"
                   className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"

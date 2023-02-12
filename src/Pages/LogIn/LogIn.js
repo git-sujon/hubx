@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "../../Assets/Fonts/fonts.css";
 import Button from "../../Components/Button/Button";
 import CommonLink from "../../Components/Link/CommonLink";
 import NewCustomer from "../../Components/NewCustomer/NewCustomer";
+import { AuthContext } from "../../Contexts/AuthProvider";
 const LogIn = () => {
+  const {user,  userLogin,} = useContext(AuthContext)
+
+  console.log("user", user)
+
+
 
   const {
     register,
@@ -17,6 +23,17 @@ const LogIn = () => {
 
   const logInHandler = (event) => {
     console.log("event", event);
+
+
+    userLogin( event?.email, event?.password)
+    .then (res => {
+      
+    })
+    .catch(error => {
+      console.error(error.message)
+    })
+
+
   };
 
 
