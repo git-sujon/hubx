@@ -18,20 +18,20 @@ const Instagram = () => {
     ]
 
     return (
-        <section class="bg-[#040F16] text-white ">
+        <section className="bg-[#040F16] text-white ">
         <div className=" py-20 container px-[70px] mx-auto border-b border-white border-opacity-20">
-          <div class="text-center">
+          <div className="text-center">
             <h3 className="text-xl text-[#2554D7] homemade-apple-font">
               whats new
             </h3>
-            <h2 class="text-xl font-bold  sm:text-4xl rajdhani-font">
+            <h2 className="text-xl font-bold  sm:text-4xl rajdhani-font">
               Instagram
             </h2>
           </div>
   
       
   
-          <div class="grid gap-4 mt-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid gap-4 mt-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {posts.map((post) => (
               <PostDetails
                 post={post}

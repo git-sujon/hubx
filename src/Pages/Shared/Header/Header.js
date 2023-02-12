@@ -12,22 +12,22 @@ const Header = () => {
    <TopInfo></TopInfo>
     <nav
       x-data={` ${{ isOpen: false }}`}
-      class="bg-white shadow "
+      className="bg-white shadow "
     >
-      <div class="container px-6 py-4 mx-auto rajdhani-font">
-        <div class="lg:flex lg:items-center">
-          <div class="flex items-center justify-between">
+      <div className="container px-6 py-4 mx-auto rajdhani-font">
+        <div className="lg:flex lg:items-center">
+          <div className="flex items-center justify-between">
             <Link to="/">
              <span className="font-bold text-4xl">HUBx</span>
             </Link>
 
             {/* <!-- Mobile menu button --> */}
-            <div class="flex lg:hidden">
+            <div className="flex lg:hidden">
               <button
                 x-cloak
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                class="text-gray-500  hover:text-gray-600  focus:outline-none focus:text-gray-600 "
+                className="text-gray-500  hover:text-gray-600  focus:outline-none focus:text-gray-600 "
                 aria-label="toggle menu"
               >
               {
@@ -35,7 +35,7 @@ const Header = () => {
              
                 
                 xmlns="http://www.w3.org/2000/svg"
-                class={`w-6 h-6`}
+                className={`w-6 h-6`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -52,7 +52,7 @@ const Header = () => {
                
           
                 xmlns="http://www.w3.org/2000/svg"
-                class={`w-6 h-6 `}
+                className={`w-6 h-6 `}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -72,47 +72,47 @@ const Header = () => {
 
           <div
             x-cloak
-            class={` ${
+            className={` ${
               isOpen
                 ? "translate-x-0 opacity-100 "
                 : "opacity-0 -translate-x-full"
             } absolute inset-x-0 z-20 flex-1 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white  lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between`}
           >
-            <div class="flex flex-col  capitalize  lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center font-medium">
+            <div className="flex flex-col  capitalize  lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center font-medium">
               <Link
                 to="/"
-                class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
                 Home
               </Link>
               <Link
                 to="/shop"
-                class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
                 Shop
               </Link>
               <Link
                 to="#"
-                class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
                 About
               </Link>
             
               <Link
                 to="/login"
-                class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
                 Login
               </Link>
               <Link
                 to="/signUp"
-                class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
                 Register
               </Link>
               <Link
                 to="/userProfiles"
-                class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
+                className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
                 Profiles
               </Link>
@@ -120,7 +120,7 @@ const Header = () => {
            
             </div>
 
-            <div class="flex  mt-6 lg:mt-0 ">
+            <div className="flex  mt-6 lg:mt-0 ">
               {/* search  */}
 
               <FiSearch className="w-5 h-5 text-black ml-5 font-bold cursor-pointer"/>

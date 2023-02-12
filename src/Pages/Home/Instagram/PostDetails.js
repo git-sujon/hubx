@@ -4,7 +4,7 @@ const PostDetails = ({post}) => {
     const {img, id} = post
     return (
         <div>
-            <img src={img} alt={`Instagram Post ${id}`} class=" w-full " />
+            <img src={img} alt={`Instagram Post ${id}`} className=" w-full " />
         </div>
     );
 };

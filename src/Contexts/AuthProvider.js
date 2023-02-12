@@ -4,13 +4,13 @@ import app  from '../Firebase/Firebase.config';
 
 export const AuthContext= createContext()
 const auth = getAuth(app)
-const [loading ,setLoading] = useState(true)
+
 
 
 const AuthProvider = ({children}) => {
 const [user, setUser] = useState('')
 
-
+const [loading ,setLoading] = useState(true)
 
 
 const userLogin = (email, password) => {
