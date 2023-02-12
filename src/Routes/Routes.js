@@ -7,6 +7,7 @@ import ResetPassword from '../Pages/ResetPassword/ResetPassword';
 import Shop from '../Pages/Shop/Shop';
 import SignUp from '../Pages/SignUp/SignUp';
 import UserProfiles from '../Pages/UserProfiles/UserProfiles';
+import PrivateRoute from './PrivateRoute';
 
 
 const Routes =createBrowserRouter([
@@ -40,7 +41,7 @@ const Routes =createBrowserRouter([
       },
       {
         path:'userProfiles',
-        element:<UserProfiles></UserProfiles>
+        element:<PrivateRoute><UserProfiles></UserProfiles></PrivateRoute>
       },
     ]
   }
