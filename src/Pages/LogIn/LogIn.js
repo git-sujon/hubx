@@ -29,7 +29,7 @@ const LogIn = () => {
 
     userLogin( event?.email, event?.password)
     .then (res => {
-      toast.success("User Login")
+      toast.success("Welcome Back")
     })
     .catch(error => {
       console.error(error.message)

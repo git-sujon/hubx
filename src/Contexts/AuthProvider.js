@@ -28,7 +28,7 @@ const createUser = (email, password) => {
 
 
 const logOut = () => {
-
+  setLoading(true)
   return signOut(auth)
 }
 
@@ -37,18 +37,16 @@ const resetPassword = (email) => {
 
 }
 
-useEffect(()=> {
-const unSubscribe = onAuthStateChanged(auth, currentUser => {
-  setUser(currentUser)
-  setLoading(false)
-})
+useEffect(()=>{
+  const unSubscribe= onAuthStateChanged(auth, currentUser => {
+      setUser(currentUser)
+      setLoading(false)
+  })
+  return ()=> {
+      unSubscribe()
+  }
 
-return () => {
-  unSubscribe()
-}
-
-},  [])
-
+}, [])
 
   const authInfo= {
     user,
@@ -56,7 +54,9 @@ return () => {
     userLogin,
     createUser,
     logOut,
-    resetPassword
+    resetPassword,
+    setLoading,
+    loading
   }
   
 

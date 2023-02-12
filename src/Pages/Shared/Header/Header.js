@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiShoppingBag, FiSearch, FiUser } from "react-icons/fi";
 import TopInfo from "../../../Components/TopInfo/TopInfo";
-
+import { AuthContext } from "../../../Contexts/AuthProvider";
+import Button from "../../../Components/Button/Button";
+import Spinner from "../../../Components/Sppiner/Sppiner";
+import toast  from 'react-hot-toast';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logOut, setLoading, loading } = useContext(AuthContext);
+
+  console.log("user", user);
+
+const signOutHandler = () => {
+  logOut()
+  .then(()=> {
+    toast.success("Sign Out Successfully")
+  })
+  .catch((error)=> {
+    console.error(error.message)
+  })
+}
 
   return (
     <>
@@ -103,12 +119,18 @@ const Header = () => {
                   Register
                 </Link>
 
-                <Link
-                  to="/login"
-                  className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
-                >
-                  Login
-                </Link>
+                {!user?.email ? (
+                  <Link
+                    to="/login"
+                    className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
+                  >
+                    Login
+                  </Link>
+                ) : (
+                  <button onClick={signOutHandler} className="w-full px-2 py-1  text-base font-semibold tracking-wide uppercase transition-none  text-white bg-[#040F16] hover:bg-sky-900 sm:mt-0 sm:w-auto sm:flex-shrink-0 rajdhani-font">
+                   Sign Out
+                  </button>
+                )}
               </div>
 
               <div className="flex  mt-6 lg:mt-0 ">
