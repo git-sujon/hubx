@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
 import app  from '../Firebase/Firebase.config';
+import toast  from 'react-hot-toast';
+
 
 export const AuthContext= createContext()
 const auth = getAuth(app)
@@ -30,6 +32,11 @@ const logOut = () => {
   return signOut(auth)
 }
 
+const resetPassword = (email) => {
+ return sendPasswordResetEmail(auth, email)
+
+}
+
 useEffect(()=> {
 const unSubscribe = onAuthStateChanged(auth, currentUser => {
   setUser(currentUser)
@@ -48,7 +55,8 @@ return () => {
     setUser,
     userLogin,
     createUser,
-    logOut
+    logOut,
+    resetPassword
   }
   
 

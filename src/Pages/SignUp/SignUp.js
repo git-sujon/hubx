@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../../Components/Button/Button";
 import { AuthContext } from "../../Contexts/AuthProvider";
+import toast  from 'react-hot-toast';
 
 const SignUp = () => {
 
@@ -24,7 +25,9 @@ const SignUp = () => {
 
     createUser( event?.email, event?.password)
     .then (res => {
+      
       reset()
+      toast.success("New User Created")
     })
     .catch(error => {
       console.error(error.message)

@@ -6,6 +6,8 @@ import Button from "../../Components/Button/Button";
 import CommonLink from "../../Components/Link/CommonLink";
 import NewCustomer from "../../Components/NewCustomer/NewCustomer";
 import { AuthContext } from "../../Contexts/AuthProvider";
+import toast  from 'react-hot-toast';
+
 const LogIn = () => {
   const {user,  userLogin,} = useContext(AuthContext)
 
@@ -27,7 +29,7 @@ const LogIn = () => {
 
     userLogin( event?.email, event?.password)
     .then (res => {
-      
+      toast.success("User Login")
     })
     .catch(error => {
       console.error(error.message)

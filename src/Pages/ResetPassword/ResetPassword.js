@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import CommonLink from "../../Components/Link/CommonLink";
 import NewCustomer from "../../Components/NewCustomer/NewCustomer";
+import toast  from 'react-hot-toast';
+import { AuthContext } from "../../Contexts/AuthProvider";
 
 const ResetPassword = () => {
+
+  const {resetPassword,} = useContext(AuthContext)
+
   const {
     register,
     handleSubmit,
-    reset,
+
 
     formState: { errors },
   } = useForm();
 
   const resetPasswordHandler = (event) => {
-    console.log("event", event);
+    resetPassword(event?.email)
+    .then(() => {
+      toast.success('Please Check your email');
+    })
+    .catch((error) => {
+
+      console.error(error.message)
+  
+    });
   };
 
 
