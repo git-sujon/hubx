@@ -8,22 +8,25 @@ const auth = getAuth(app)
 
 
 const AuthProvider = ({children}) => {
-const [user, setUser] = useState('')
+const [user, setUser] = useState(null)
 
 const [loading ,setLoading] = useState(true)
 
 
 const userLogin = (email, password) => {
-  return signInWithEmailAndPassword(email, password)
+  setLoading(true)
+  return signInWithEmailAndPassword(auth , email, password)
 }
 
 const createUser = (email, password) => {
-  return createUserWithEmailAndPassword(email, password)
+  setLoading(true)
+  return createUserWithEmailAndPassword(auth ,email, password)
 }
 
 
 
 const logOut = () => {
+
   return signOut(auth)
 }
 
@@ -45,6 +48,7 @@ return () => {
     setUser,
     userLogin,
     createUser,
+    logOut
   }
   
 

@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../../Components/Button/Button";
+import { AuthContext } from "../../Contexts/AuthProvider";
 
 const SignUp = () => {
+
+  const {user,  createUser,} = useContext(AuthContext)
+
+  console.log("user", user)
+
+
   const {
     register,
     handleSubmit,
@@ -13,6 +20,14 @@ const SignUp = () => {
 
   const singUpHandler = (event) => {
     console.log("event", event);
+
+
+    createUser( event?.email, event?.password)
+    .then (res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+
   };
 
   return (
