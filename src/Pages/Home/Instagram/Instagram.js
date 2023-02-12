@@ -24,7 +24,7 @@ const Instagram = () => {
             <h3 className="text-xl text-[#2554D7] homemade-apple-font">
               whats new
             </h3>
-            <h2 class="text-xl font-bold  sm:text-3xl rajdhani-font">
+            <h2 class="text-xl font-bold  sm:text-4xl rajdhani-font">
               Instagram
             </h2>
           </div>

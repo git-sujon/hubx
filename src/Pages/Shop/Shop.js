@@ -48,7 +48,7 @@ const Shop = () => {
           <h3 className="text-xl text-[#2554D7] homemade-apple-font">
             whats new
           </h3>
-          <h2 class="text-xl font-bold text-[#040F16] sm:text-3xl rajdhani-font">
+          <h2 class="text-xl font-bold text-[#040F16] sm:text-4xl rajdhani-font">
             SHOP THE LATEST
           </h2>
 

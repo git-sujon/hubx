@@ -99,22 +99,22 @@ const Header = () => {
               </Link>
             
               <Link
-                to="#"
+                to="/login"
                 class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
-                blog
+                Login
               </Link>
               <Link
-                to="#"
+                to="/signUp"
                 class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
-                Feature
+                Register
               </Link>
               <Link
-                to="#"
+                to="/userProfiles"
                 class="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-white hover:bg-[#040F16] px-2 py-1"
               >
-                Contacts
+                Profiles
               </Link>
 
            
