@@ -36,7 +36,7 @@ const SignUp = () => {
       password: event?.password
     }
 
-    fetch(`http://localhost:5000/users`, {
+    fetch(`https://hubx-server-git-sujon.vercel.app/users`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../../Assets/Fonts/fonts.css";
 import Button from "../../Components/Button/Button";
 import CommonLink from "../../Components/Link/CommonLink";
@@ -12,7 +12,9 @@ const LogIn = () => {
   const {user,  userLogin,} = useContext(AuthContext)
   const [error, setError] = useState("");
 
-
+  const navigate= useNavigate() 
+  const location= useLocation()
+  const from = location.state?.from?.pathname || "/";
 
 
   const {
@@ -32,7 +34,7 @@ const LogIn = () => {
       reset()
       toast.success("Welcome Back")
       setError('')
-      
+      navigate(from, { replace: true });
     })
     .catch(error => {
   

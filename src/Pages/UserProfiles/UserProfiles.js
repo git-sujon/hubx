@@ -4,7 +4,7 @@ const UserProfiles = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users`, {})
+    fetch(`https://hubx-server-git-sujon.vercel.app/users`, {})
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);

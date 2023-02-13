@@ -22,7 +22,7 @@ const PrivateRoute = ({ children }) => {
 
   }
 
-  if (!user) {
+  if (!user?.email) {
     return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
   }
   return children;
